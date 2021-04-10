@@ -5,6 +5,7 @@ on:
 jobs:
   snapshot_test:
     name: Snapshot Test
+    runs-on: ubuntu-latest
     if: ${{ github.event.issue.pull_request && contains(github.event.comment.body, '.pages.dev') }}
     steps:
       - uses: actions-ecosystem/action-regex-match@v2
