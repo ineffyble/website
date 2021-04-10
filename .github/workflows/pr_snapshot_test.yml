@@ -11,8 +11,9 @@ jobs:
       - uses: actions-ecosystem/action-regex-match@v2
         name: extract CloudFlare preview URL
         id: regex-match
-        with: ${{ github.event.comment.body }}
-        regex: '(https.*?\.pages\.dev)'
+        with:
+          text: ${{ github.event.comment.body }}
+          regex: '(https.*?\.pages\.dev)'
       - name: install puppeteer-headful
         uses: mujo-code/puppeteer-headful@master
         env:
